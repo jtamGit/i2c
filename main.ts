@@ -1,16 +1,69 @@
-let sensor = 0
-pins.i2cWriteNumber(
-32,
-255,
-NumberFormat.UInt8BE,
-false
-)
-serial.redirectToUSB()
-serial.setBaudRate(BaudRate.BaudRate115200)
-let enter = 10
 basic.forever(function () {
-    sensor = pins.i2cReadNumber(32, NumberFormat.UInt8BE, false)
-    serial.writeNumber(sensor)
-    serial.writeLine("")
-    basic.pause(200)
+    pins.i2cWriteNumber(
+    46,
+    107,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    111,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    110,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    110,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    110,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    105,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    116,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    105,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    119,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    97,
+    NumberFormat.UInt8BE,
+    false
+    )
+    pins.i2cWriteNumber(
+    46,
+    13,
+    NumberFormat.UInt8BE,
+    false
+    )
+    basic.pause(1000)
 })
