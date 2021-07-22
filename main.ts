@@ -1,3 +1,17 @@
+input.onButtonPressed(Button.A, function () {
+    serial.writeLine(convertToText(input.temperature()))
+    sensor = input.temperature()
+})
+serial.onDataReceived(serial.delimiters(Delimiters.CarriageReturn), function () {
+    serial.writeString("@")
+})
+let sensor = 0
+serial.redirect(
+SerialPin.USB_TX,
+SerialPin.USB_RX,
+BaudRate.BaudRate115200
+)
+serial.redirectToUSB()
 basic.forever(function () {
     pins.i2cWriteNumber(
     46,
@@ -66,4 +80,5 @@ basic.forever(function () {
     false
     )
     basic.pause(1000)
+    serial.writeString("a")
 })
